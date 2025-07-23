@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    setHasScrolled(window.scrollY > 10);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const navLinks = (
     <>
@@ -50,7 +60,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 ">
+   <nav className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${hasScrolled ? "bg-[#061212] shadow-md" : "bg-transparent"}`}>
       <div className="max-w-[1240px] py-6 px-6 lg:px-0 flex items-center justify-between container mx-auto">
         <div>
           <img className="lg:w-35 w-31" src="/logo.png" alt="logo" />

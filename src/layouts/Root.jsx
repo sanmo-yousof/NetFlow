@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 export default function RootLayout() {
   return (
-    <div className="">
+    <div className="font-display">
       <Navbar />
       <main className="min-h-[60vh]">
         <Outlet />
