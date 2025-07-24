@@ -9,6 +9,17 @@ import image2 from "../../assets/images/image2.png";
 import image3 from "../../assets/images/image3.png";
 import FaqTabs from "../../components/Faq";
 
+import company1 from "../../assets/images/Amazon.svg"
+import company2 from "../../assets/images/Chase.svg"
+import company3 from "../../assets/images/Exxon.svg"
+import company4 from "../../assets/images/Microsoft.svg"
+import company5 from "../../assets/images/Netflix.svg"
+import company6 from "../../assets/images/Vice.svg"
+import company7 from "../../assets/images/VISA.svg"
+import company8 from "../../assets/images/Walmart.svg"
+
+
+
 export default function Home() {
   const avatars = [
     {
@@ -100,9 +111,30 @@ export default function Home() {
           <p className="text-base text-[#ECFCFD] text-center lg:text-xl font-light">
             Organizations powered by <span className="font-bold">NoteFlow</span>
           </p>
-          <div>
-            <div>
-              <img src="" alt="" />
+          <div className="grid grid-cols-2 lg:gap-14   mt-12 gap-10 lg:mt-16 lg:grid-cols-4">
+            <div className=" flex justify-center items-center">
+              <img src={company1} alt="" />
+            </div>
+            <div className=" flex justify-center items-center">
+              <img src={company2} alt="" />
+            </div>
+            <div className=" flex justify-center items-center">
+              <img src={company3} alt="" />
+            </div>
+            <div className=" flex justify-center items-center">
+              <img src={company4} alt="" />
+            </div>
+            <div className=" flex justify-center items-center">
+              <img src={company5} alt="" />
+            </div>
+            <div className=" flex justify-center items-center">
+              <img src={company6} alt="" />
+            </div>
+            <div className=" flex justify-center items-center">
+              <img src={company7} alt="" />
+            </div>
+            <div className="mt-0 flex justify-center items-center">
+              <img src={company8} alt="" />
             </div>
           </div>
         </div>
@@ -114,7 +146,7 @@ export default function Home() {
             All The Tools You Need to{" "}
             <span className="text-[#44E5E7]">Supercharge</span> Your Note Taking
           </h2>
-          <div className="py-16">
+          <div className="pt-16">
             <div className="flex lg:gap-0 gap-10 flex-col-reverse lg:flex-row justify-between items-center">
               <div className="">
                 <img className="lg:w-[500px]" src={image2} alt="" />

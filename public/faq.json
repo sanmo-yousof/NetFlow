@@ -3,7 +3,8 @@
     "id": 0,
     "category": "General",
     "question": "What is NoteFlow?",
-    "answer": "NoteFlow is an AI-powered note-taking application designed to help individuals and teams organize, manage, and retrieve notes effortlessly. By utilizing cutting-edge artificial intelligence, NoteFlow streamlines your note-taking process, making it easier to capture ideas, collaborate with teammates, and search for important information quickly."
+    "answer": "NoteFlow is an AI-powered note-taking application designed to help individuals and teams organize, manage, and retrieve notes effortlessly. By utilizing cutting-edge artificial intelligence, NoteFlow streamlines your note-taking process, making it easier to capture ideas, collaborate with teammates, and search for important information quickly.",
+    "icon": "/faq-icons/note.svg"
   },
   {
     "id": 1,
