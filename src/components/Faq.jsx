@@ -89,7 +89,7 @@ export default function FaqTabs() {
                     : "grid-rows-[0fr] opacity-0"
                 }`}
               >
-                <p className="text-[#C7F7F8] text-sm lg:text-base font-light  overflow-hidden">
+                <p className="text-[#C7F7F8] lg:ml-8 ml-14 text-sm lg:text-base font-light  overflow-hidden">
                   {according.answer}
                 </p>
               </div>

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b py-24 px-6 lg:px-0 lg:py-32 from-[#061212] to-[#0E2E2E]">
-      <div className="max-w-[1240px]  lg:flex mx-auto container">
-        <div className="lg:w-[45%] lg:mb-0 mb-16">
+      <div className="max-w-[1240px] lg:flex mx-auto container">
+        <div className="lg:w-[35%] lg:mb-0 mb-16">
           <img className="lg:w-40 w-31" src="/footerlogo.png" alt="logo" />
         </div>
-        <div className="text-[#ECFCFD] lg:w-[55%] grid grid-cols-2 lg:grid-cols-4 justify-between">
+        <div className="text-[#ECFCFD] lg:w-[65%] grid grid-cols-2 lg:grid-cols-4 justify-between">
           <div className="mb-16 lg:mb-0">
             <h3 className="font-semibold text-lg lg:text-xl mb-8 ">Home</h3>
             <ul className="lg:text-lg text-base font-light space-y-4">

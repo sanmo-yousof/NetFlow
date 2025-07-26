@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
+import { RxCross1 } from "react-icons/rx";
 import { Link, NavLink } from "react-router-dom";
+import LoginModal from "./LoginModal";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   useEffect(() => {
-  const handleScroll = () => {
-    setHasScrolled(window.scrollY > 10);
-  };
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 10);
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = (
     <>
@@ -28,7 +31,7 @@ export default function Navbar() {
       </li>
       <li>
         <NavLink
-          to="/pricing"
+          to="/price"
           className={({ isActive }) =>
             isActive ? "font-semibold" : "font-light"
           }
@@ -38,7 +41,7 @@ export default function Navbar() {
       </li>
       <li>
         <NavLink
-          to="/about"
+          to="about"
           className={({ isActive }) =>
             isActive ? "font-semibold" : "font-light"
           }
@@ -48,7 +51,7 @@ export default function Navbar() {
       </li>
       <li>
         <NavLink
-          to="/community"
+          to="community"
           className={({ isActive }) =>
             isActive ? "font-semibold" : "font-light"
           }
@@ -60,7 +63,11 @@ export default function Navbar() {
   );
 
   return (
-   <nav className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${hasScrolled ? "bg-[#061212] shadow-md" : "bg-transparent"}`}>
+    <nav
+      className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
+        hasScrolled ? "bg-[#061212] shadow-md" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-[1240px] py-6 px-6 lg:px-0 flex items-center justify-between container mx-auto">
         <div>
           <img className="lg:w-35 w-31" src="/logo.png" alt="logo" />
@@ -72,7 +79,10 @@ export default function Navbar() {
           <button className="border-2 text-lg font-light px-8 rounded-full text-[#ECFCFD] border-[#ECFCFD] py-4">
             Login
           </button>
-          <button className="rounded-full shadow-[0_0_25px_#44E5E74D] text-[#0E2E2E] font-light text-lg bg-[#44E5E7] px-8  py-4">
+          <button
+            onClick={() => setIsLoginModalOpen(true)}
+            className="rounded-full shadow-[0_0_25px_#44E5E74D] text-[#0E2E2E] font-light text-lg bg-[#44E5E7] px-8  py-4"
+          >
             Get Started
           </button>
         </div>
@@ -120,11 +130,22 @@ export default function Navbar() {
               <button className="border-2 text-base font-medium px-8 rounded-full text-[#ECFCFD] border-[#ECFCFD] py-[14px]">
                 Login
               </button>
-              <button className="rounded-full text-[#0E2E2E] font-normal text-base bg-[#44E5E7] px-8 py-4">
+              <button
+                onClick={() => setIsLoginModalOpen(true)}
+                className="rounded-full text-[#0E2E2E] font-normal text-base bg-[#44E5E7] px-8 py-4"
+              >
                 Get Started
               </button>
             </div>
           </div>
+        </>
+      )}
+      {isLoginModalOpen && (
+        <>
+          <LoginModal
+            isOpen={isLoginModalOpen}
+            onClose={() => setIsLoginModalOpen(false)}
+          />
         </>
       )}
     </nav>

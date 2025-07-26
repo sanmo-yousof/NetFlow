@@ -17,6 +17,8 @@ import company5 from "../../assets/images/Netflix.svg"
 import company6 from "../../assets/images/Vice.svg"
 import company7 from "../../assets/images/VISA.svg"
 import company8 from "../../assets/images/Walmart.svg"
+import Testimonials from "../../components/Testimonials";
+import LoginModal from "../../components/LoginModal";
 
 
 
@@ -186,8 +188,9 @@ export default function Home() {
         </div>
       </section>
 
-
       <FaqTabs></FaqTabs>
+      <Testimonials></Testimonials>
+      <LoginModal/>
     </>
   );
 }
